@@ -1,0 +1,9 @@
+1. readelf -s /usr/sbin/apache2 | grep error_response
+OR
+1. nm -D /usr/sbin/apache2 | grep error_response
+2. sudo trace-bpfcc ':apache2:send_error_response'
+2. curl -k https://localhost/%
+ES demo:
+3. curl -X PUT "localhost:9200/apache-errors" // create elasticsearch-index
+3. Configure 'index pattern' in elasticsearch
+3. Configure canvas dashboard
