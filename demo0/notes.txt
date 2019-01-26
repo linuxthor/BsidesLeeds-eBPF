@@ -1,0 +1,3 @@
+1. sudo trace-bpfcc 'sys_mkdir'
+2. sudo trace-bpfcc 'sys_mkdir "%s" arg1'
+3. sudo trace-bpfcc ':c:mkdir "%s" arg1' 'sys_mkdir "%s" arg1'
