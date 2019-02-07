@@ -43,8 +43,8 @@ prog = """
             file = bprm->file; 
             inode= file->f_inode;
             n->ino = inode->i_ino; 
-            bpf_probe_read(&n->fna, 4096, bprm->filename);
-            bpf_probe_read(&n->itp, 4096, bprm->interp);
+            bpf_probe_read_str(&n->fna, 4096, bprm->filename);
+            bpf_probe_read_str(&n->itp, 4096, bprm->interp);
             n->pid = (u32)bpf_get_current_pid_tgid();
             output.perf_submit(ctx, n, sizeof(notify_t));
         }
