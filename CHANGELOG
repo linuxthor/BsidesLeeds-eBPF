@@ -1,0 +1,5 @@
+2019-02-07  James Ogden  <@linuxthor>
+
+    * updated demos (working with Ubuntu libbpfcc 0.5.0) to work with IO Visor 0.8.0
+      replaced some use of bpf_probe_read with bpf_probe_read_str
+    
