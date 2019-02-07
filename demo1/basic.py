@@ -34,7 +34,7 @@ prog = """
             return 0; 
         }
 
-        bpf_probe_read(&n->data, 4096, ((struct request_rec *)req)->the_request);
+        bpf_probe_read_str(&n->data, 4096, ((struct request_rec *)req)->the_request);
         n->pid = (u32)bpf_get_current_pid_tgid();
         output.perf_submit(ctx, n, sizeof(notify_t));
         return 0; 
